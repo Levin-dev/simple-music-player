@@ -1,13 +1,13 @@
 // @flow
 
-import React from 'react'
+import React, {PureComponent} from 'react'
 import {View, ScrollView} from 'react-native'
 import {Styles} from './Styles/PlaylistCarouselStyle'
 import BlockPlaylist from './BlockPlaylist'
 import Title from './Title'
 import I18n from '../i18n'
 
-export default class PlaylistCarousel extends React.PureComponent {
+export default class PlaylistCarousel extends PureComponent {
   renderBlockPlaylist = (el, index) =>
     <BlockPlaylist key={index} el={el} />
 

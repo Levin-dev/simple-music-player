@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react'
-import {ScrollView, View, Image, Text} from 'react-native'
-import {Styles} from './Styles/FooterPlayerStyle'
+import {TouchableOpacity, View, Image, Text} from 'react-native'
+import {Styles} from './Styles/MinifyPlayerStyle'
 import RadialGradient from 'react-native-radial-gradient'
 import LinearGradient from 'react-native-linear-gradient'
 import {Colors} from '../Themes/Theme'
@@ -12,9 +12,17 @@ import {Play} from '../Icons/Play'
 type Props = {
 }
 
-export default class FooterPlayer extends React.Component<Props> {
+export default class MinifyPlayer extends React.Component<Props> {
+  handleNavigateToPlayer = () => {
+    this.props.navigation.navigate('Player')
+  }
+
   render() {
-    return <View style={Styles.container}>
+    return <TouchableOpacity
+      onPress={this.handleNavigateToPlayer}
+      style={Styles.container}
+      activeOpacity={1}
+    >
       <LinearGradient
         colors={['transparent', 'black']}
         style={Styles.shadow}
@@ -44,12 +52,12 @@ export default class FooterPlayer extends React.Component<Props> {
             <Text numberOfLines={1} style={Styles.textDescription}>Lorde</Text>
           </View>
           <View style={Styles.playerContainer}>
-            <Next style={{transform: [{rotateY: '180deg'}]}} />
+            <Next isInverse />
             <Play />
             <Next />
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   }
 }

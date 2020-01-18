@@ -1,6 +1,6 @@
 import React from 'react'
 import {Svg, G, Path} from 'react-native-svg'
-import {Colors} from "../Themes/Theme";
+import {Colors} from '../Themes/Theme'
 
 export const Play = ({color = Colors.darkBlack, width = 30, height = 30}) => (
   <Svg id='Capa_1' x='0px' y='0px' fill={color} width={width} height={height} viewBox='0 0 163.861 163.861' style='enable-background:new 0 0 163.861 163.861;'>

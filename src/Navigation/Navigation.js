@@ -2,7 +2,9 @@
 
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
-import MainScreen from '../Containers/Main'
+import {fromBottom} from 'react-navigation-transitions'
+import MainScreen from '../Containers/MainScreen'
+import PlayerScreen from '../Containers/PlayerScreen'
 import {Styles} from './Styles'
 
 const AppNavigator = createStackNavigator({
@@ -13,7 +15,16 @@ const AppNavigator = createStackNavigator({
       headerStyle: Styles.header,
       headerTitleStyle: Styles.title
     }
+  },
+  Player: {
+    screen: PlayerScreen,
+    navigationOptions: {
+      header: null,
+      gesturesEnabled: true
+    }
   }
+}, {
+  transitionConfig: () => fromBottom(400)
 })
 
 export default createAppContainer(AppNavigator)

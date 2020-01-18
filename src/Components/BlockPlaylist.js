@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react'
+import React, {PureComponent} from 'react'
 import {View, ScrollView, Text, Image} from 'react-native'
 import {Styles} from './Styles/BlockPlaylistStyle'
 
-export default class BlockPlaylist extends React.PureComponent {
+export default class BlockPlaylist extends PureComponent {
   renderBottomContainer = () => [
     <Text style={Styles.textName} key={0}>
       Home
