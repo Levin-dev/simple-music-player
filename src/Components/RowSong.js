@@ -1,15 +1,15 @@
 // @flow
 
-import React from 'react'
+import React, {PureComponent} from 'react'
 import {View, Text, Image, TouchableOpacity} from 'react-native'
 import {Styles} from './Styles/RowSongStyle'
 import RadialGradient from 'react-native-radial-gradient'
-import {Colors} from "../Themes/Theme";
+import {Colors} from '../Themes/Theme'
 
 type Props = {
 }
 
-class RowSong extends React.Component<Props> {
+class RowSong extends PureComponent<Props> {
 
   render() {
     const selected = this.props.el === 2
